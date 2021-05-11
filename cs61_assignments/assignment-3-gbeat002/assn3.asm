@@ -1,0 +1,560 @@
+;=================================================
+; Name: Grant Beatty
+; Email: gbeat002@ucr.edu
+; GitHub username: gbeat002
+; 
+; Assignment name: Assignment 3
+; Lab section: 
+; 
+; I hereby certify that I have not received assistance on this assignment,
+; or used code, from ANY outside source other than the instruction team.
+;
+;=================================================
+
+.ORIG x3000
+
+ADD R2, R2, #12
+ADD R2, R2, #12
+ADD R2, R2, #12
+ADD R2, R2, #12
+
+
+
+
+; Program begins here
+;-------------
+;Instructions
+;-------------
+LD R4, val
+LDR R5, R4, #0
+
+LD R6, Value_addr		; R6 <-- pointer to value to be displayed as binary
+LDR R1, R6, #0	; R1 <-- value to be displayed as binary
+
+BRzp IS_POSITIVE
+;-------------------------------
+;INSERT CODE STARTING FROM HERE
+;--------------------------------
+
+ADD R0, R2, #1
+OUT
+
+ADD R3,R1,#0
+DO_WHILE_LOOP
+ADD R3, R3, #2
+ADD R5, R5, #-1
+
+BRp DO_WHILE_LOOP
+END_DO_WHILE_LOOP
+
+
+
+
+
+IS_POSITIVE
+
+LDR R1, R6, #0
+BRn IS_NEGATIVE
+
+ADD R3, R1, #0
+ADD R0, R2, #0
+OUT
+
+IS_NEGATIVE
+
+
+;round 1
+
+
+ADD R5, R3, #0
+LDR R0, R4, #0
+
+DO_WHILE_LOO
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO
+END_DO_WHILE_LOO
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV
+ADD R0, R2, #0
+OUT
+IS_POSITIV
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV
+
+
+
+;Round 2
+
+
+
+ADD R5, R3, #0
+LDR R0, R4, #1
+
+DO_WHILE_LOO2
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO2
+END_DO_WHILE_LOO2
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV2
+ADD R0, R2, #0
+OUT
+IS_POSITIV2
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV2
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV2
+
+
+
+;Round 3
+
+
+
+
+
+
+
+ADD R5, R3, #0
+LDR R0, R4, #2
+
+DO_WHILE_LOO3
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO3
+END_DO_WHILE_LOO3
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV3
+ADD R0, R2, #0
+OUT
+IS_POSITIV3
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV3
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV3
+
+
+LEA R0, DASH
+PUTS
+;Round 4
+
+
+
+ADD R5, R3, #0
+LDR R0, R4, #3
+
+DO_WHILE_LOO4
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO4
+END_DO_WHILE_LOO4
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV4
+ADD R0, R2, #0
+OUT
+IS_POSITIV4
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV4
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV4
+
+;round 5
+
+
+
+
+
+ADD R5, R3, #0
+LDR R0, R4, #4
+
+DO_WHILE_LOO5
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO5
+END_DO_WHILE_LOO5
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV5
+ADD R0, R2, #0
+OUT
+IS_POSITIV5
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV5
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV5
+
+;Round 6
+
+
+ADD R5, R3, #0
+LDR R0, R4, #5
+
+DO_WHILE_LOO6
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO6
+END_DO_WHILE_LOO6
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV6
+ADD R0, R2, #0
+OUT
+IS_POSITIV6
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV6
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV6
+
+
+
+
+;Round 7
+
+
+ADD R5, R3, #0
+LDR R0, R4, #6
+
+DO_WHILE_LOO7
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO7
+END_DO_WHILE_LOO7
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV7
+ADD R0, R2, #0
+OUT
+IS_POSITIV7
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV7
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV7
+
+
+
+
+LEA R0, DASH
+PUTS
+;Round 8
+
+ADD R5, R3, #0
+LDR R0, R4, #7
+
+DO_WHILE_LOO8
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO8
+END_DO_WHILE_LOO8
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV8
+ADD R0, R2, #0
+OUT
+IS_POSITIV8
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV8
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV8
+
+
+;Round 9
+
+
+ADD R5, R3, #0
+LDR R0, R4, #8
+
+DO_WHILE_LOO9
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO9
+END_DO_WHILE_LOO9
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV9
+ADD R0, R2, #0
+OUT
+IS_POSITIV9
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV9
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV9
+
+;round 10
+
+ADD R5, R3, #0
+LDR R0, R4, #9
+
+DO_WHILE_LOO10
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO10
+END_DO_WHILE_LOO10
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV10
+ADD R0, R2, #0
+OUT
+IS_POSITIV10
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV10
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV10
+
+;round 11
+
+
+ADD R5, R3, #0
+LDR R0, R4, #10
+
+DO_WHILE_LOO11
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO11
+END_DO_WHILE_LOO11
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV11
+ADD R0, R2, #0
+OUT
+IS_POSITIV11
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV11
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV11
+
+
+
+LEA R0, DASH
+PUTS
+;round 12
+
+
+
+ADD R5, R3, #0
+LDR R0, R4, #11
+
+DO_WHILE_LOO12
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO12
+END_DO_WHILE_LOO12
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV12
+ADD R0, R2, #0
+OUT
+IS_POSITIV12
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV12
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV12
+
+
+;round 13
+
+
+ADD R5, R3, #0
+LDR R0, R4, #12
+
+DO_WHILE_LOO13
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO13
+END_DO_WHILE_LOO13
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV13
+ADD R0, R2, #0
+OUT
+IS_POSITIV13
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV13
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV13
+
+
+;round 14
+
+
+ADD R5, R3, #0
+LDR R0, R4, #13
+
+DO_WHILE_LOO14
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO14
+END_DO_WHILE_LOO14
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV14
+ADD R0, R2, #0
+OUT
+IS_POSITIV14
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV14
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV14
+
+
+;round 15
+
+ADD R5, R3, #0
+LDR R0, R4, #14
+
+DO_WHILE_LOO15
+ADD R5, R5, #-1
+ADD R0, R0, #-1
+BRp DO_WHILE_LOO15
+END_DO_WHILE_LOO15
+
+ADD R5, R5, #0
+
+BRzp IS_POSITIV15
+ADD R0, R2, #0
+OUT
+IS_POSITIV15
+
+ADD R5, R5, #0
+
+BRn IS_NEGATIV15
+
+ADD R3, R5, #0
+ADD R0, R2, #1
+OUT
+IS_NEGATIV15
+
+
+LEA R0, NEWLINE            ; get starting address of prompt string
+PUTS
+
+
+
+
+
+
+HALT
+;---------------	
+;Data
+;---------------
+val		.FILL x4000
+val1		.FILL x4001
+Value_addr	.FILL xD100	; The address where value to be displayed is stored
+
+
+.orig x3100
+DASH    .STRINGZ    " "
+NEWLINE .FILL '\n'
+
+.ORIG x4000
+.FILL #16384
+.FILL #8192
+.FILL #4096
+.fill #2048
+.fill #1024
+.Fill #512
+.fill #256
+.fill #128
+.fill #64
+.fill #32
+.fill #16
+.fill #8
+.fill #4
+.fill #2
+.fill #1
+.ORIG xD100					; Remote data
+Value .FILL xABCD			; <----!!!NUMBER TO BE DISPLAYED AS BINARY!!! Note: label is redundant.
+;---------------	
+;END of PROGRAM
+;---------------	
+.END
